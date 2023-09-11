@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AutomotiveApplication<automotive>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "crm.automotive.AutomotiveApplication",
+            "projectName": "automotive",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
