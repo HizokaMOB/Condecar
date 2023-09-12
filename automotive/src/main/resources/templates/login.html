@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,24 +24,24 @@
             <br>Car
         </h1>
 
-        <form method="post" th:action="@{/login}" th:object="${usuario}">
+        <form method="post" th:action="@{/login}" th:object="${user}">
 
             <div class="form-field">
-                <input type="text" th:field="*{Usuario}" placeholder="username" required>
+                <input type="text" th:field="*{Username}" placeholder="username" required>
                 <i class='bx bxs-user'></i>
             </div>
 
             <div class="form-field">
-                <input type="password" th:field="*{contrasena}" placeholder="password" required>
+                <input type="password" th:field="*{pass}" placeholder="password" required>
                 <i class='bx bxs-lock'></i>
             </div>
 
-        </form>
+            <div class="buttons-container">
+                <button>Login</button>
+                <button>Sign up</button>
+            </div>
 
-        <div class="buttons-container">
-        <button>Login</button>
-        <button>Sign up</button>
-        </div>
+        </form>
 
 
     </div>
