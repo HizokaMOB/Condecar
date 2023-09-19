@@ -9,51 +9,73 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import crm.automotive.Models.Dao.IUsersDao;
-import crm.automotive.Models.Entity.Users;
+import crm.automotive.Models.Dao.IEmployeeDao;
+import crm.automotive.Models.Entity.Employee;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 
-
 @Controller
-@SessionAttributes("users")
-public class LoginController 
-{
-    @Autowired //inyectar dependencias, campo, metodo, constructor
-    private IUsersDao usersDao;
+@SessionAttributes("employees")
+public class LoginController {
+    @Autowired // inyectar dependencias, campo, metodo, constructor
+    private IEmployeeDao EmployeeDao;
 
     @GetMapping("/login")
-    public String login(Model model) 
-    {
-        Users user = new Users();
+    public String login(Model model) {
+        Employee employee = new Employee();
 
-        model.addAttribute("user", user);
-        
+        model.addAttribute("employee", employee);
+
         return "login";
     }
 
     @PostMapping("/login")
-    public String Validate(@NotEmpty Users user, BindingResult bindingResult, SessionStatus status){
-        List<Users> lista = usersDao.findAll();
+    public String Validate(@NotEmpty Employee employee, BindingResult bindingResult, SessionStatus status) {
+        List<Employee> lista = EmployeeDao.findAll();
 
-        if(!lista.isEmpty()){
+        if (!lista.isEmpty()) {
 
-            for(int i=0; i<lista.size(); i+=1){
-                if(lista.get(i).getUsername().equals(user.getUsername()) && lista.get(i).getPass().equals(user.getPass()))
-                    {
-                        return "redirect:/Control";
-                    }
+            for (int i = 0; i < lista.size(); i += 1) {
+                if (lista.get(i).getUsername().equals(employee.getUsername())
+                        && lista.get(i).getPass().equals(employee.getPass())) {
+                    return "redirect:/Control";
                 }
-            }   
-        
-        else{
+            }
+        }
+
+        else {
             System.out.println("Empty list!");
         }
-        
-        return "login";
+
+        return "redirect:login";
     }
-    
+
+    @GetMapping("/register")
+    public String crear(Model model) {
+        Employee employee = new Employee();
+
+        model.addAttribute("employee", employee);
+        model.addAttribute("title", "Register");
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String log(@Valid Employee employee, BindingResult bindingResult, SessionStatus status) {
+
+        EmployeeDao.save(employee);
+        status.setComplete();
+
+        return "redirect:/login";
+    }
+
+    @GetMapping("/Control")
+    public String listar(Model model){
+
+        return "Control";
+    }
+
 }

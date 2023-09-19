@@ -86,16 +86,19 @@ form input
     color: white;
     padding-top: 3rem;
     line-height: 1.5;
+    filter: drop-shadow(2px 2px 0 black);
 }
 
-.formulario button
+.formulario button 
 {
     background-color: #00c6ba;
     border-radius: 3rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 2.3rem;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    font-family: 'DM Sans';
+    font-size: 1rem;
 }
 
 .formulario button:hover
@@ -108,4 +111,29 @@ form input
     display: flex;
     flex-direction: row;
     gap: 1rem;
+}
+
+.buttons-container a
+{
+    background-color: #00c6ba;
+    border-radius: 3rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: black;
+    font-family: 'DM Sans';
+    font-size: 1rem;
+}
+
+.formulario h3
+{
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #00c6ba;
+    padding-top: 0.4rem;
+    line-height: 1.5;
+    filter: drop-shadow(2px 2px 0 black);
 }

@@ -24,7 +24,9 @@
             <br>Car
         </h1>
 
-        <form method="post" th:action="@{/login}" th:object="${employee}">
+        <form method="post" th:action="@{/register}" th:object="${employee}">
+
+            <h3>Registration form</h3>
 
             <div class="form-field">
                 <input type="text" th:field="*{Username}" placeholder="username" required>
@@ -37,9 +39,9 @@
             </div>
 
             <div class="buttons-container">
-                <button>Login</button>
-                <a th:href="@{/register}">
-                    Sign up
+                <button>save</button>
+                <a th:href="@{/login}">
+                    cancel
                 </a>
             </div>
             

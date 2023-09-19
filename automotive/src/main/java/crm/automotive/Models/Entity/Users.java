@@ -16,17 +16,13 @@ public class Users implements Serializable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String Username;
-
-    private String pass;
-
     private String name;
 
     private String adress;
 
     private String email;
 
-    private Integer phone;
+    private String phone;
 
     public Long getId() {
         return id;
@@ -34,22 +30,6 @@ public class Users implements Serializable
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return Username;
-    }
-
-    public void setUsername(String username) {
-        Username = username;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
     }
 
     public String getName() {
@@ -76,11 +56,11 @@ public class Users implements Serializable
         this.email = email;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>document</title>
-    <link rel="stylesheet" th:href="@{/css/Control.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,600&family=Pacifico&display=swap"
         rel="stylesheet">
@@ -25,9 +25,14 @@
                 <h1>Conde
                     <br>Car
                 </h1>
-                <a th:href="@{/login}">
+                <a th:href="@{/Control}">
                     Back
                 </a>
+                <div class="newbutton">
+                    <a th:href="@{/registercustomer}">
+                        Create new customer
+                    </a>
+                </div>
             </div>
             <div class="right-content">
                 <i class='bx bxs-user-circle'></i>
@@ -36,34 +41,39 @@
         </nav>
     </header>
     <div class="container">
-        <div class="hero">
-            <img th:src="@{/img/automovil.png}" alt="">
+        <div class="hero2">
+            <img th:src="@{/img/carro2.png}" alt="">
 
             <div class="dots">
                 <p class="dot"></p>
                 <p class="dot"></p>
                 <p class="dot"></p>
                 <p class="dot"></p>
-                <p class="dot"></p>
             </div>
         </div>
-
-        <div class="buttons-container">
-            <a th:href="@{/Customerlist}">
-            CUSTOMER <br>REGISTRATION 
-            </a> 
-
-            <div class="button-group">
-                <a th:href="@{/registercustomer}">
-                CUSTOMER <br>REGISTRATION FORM
-                </a>
-                <button>SALES <br>REGISTRATION</button>
-                <button>SALES <br>TRACKING</button>
-            </div>
-        </div>
-
-
     </div>
+
+    <table class="table-design">
+        <tr>
+            <th>NAME</th>
+            <th>ADDRESS</th>
+            <th>E-MAIL</th>
+            <th>PHONE NUMBER</th>
+            <th>ACTIONS</th>
+        </tr>
+
+        <tbody class="table-data">
+            <tr th:each="users: ${users}">
+                <td th:text="${users.name}"></td>
+                <td th:text="${users.adress}"></td>
+                <td th:text="${users.email}"></td>
+                <td th:text="${users.phone}"></td>
+                <td><i class='bx bxs-edit'></i></td>
+                <td><i class='bx bxs-trash'></i></td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 
 </html>
