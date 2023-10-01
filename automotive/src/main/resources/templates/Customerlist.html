@@ -63,17 +63,17 @@
         </tr>
 
         <tbody class="table-data">
-            <tr th:each="users: ${users}">
-                <td th:text="${users.name}"></td>
-                <td th:text="${users.adress}"></td>
-                <td th:text="${users.email}"></td>
-                <td th:text="${users.phone}"></td>
-                <td><i class='bx bxs-edit'></i></td>
-                <td><i class='bx bxs-trash'></i></td>
+            <tr th:each="customer: ${customers}">
+                <td th:text="${customer.name}"></td>
+                <td th:text="${customer.adress}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.phone}"></td>
+                <td><a th:href="@{/Edit/} + ${customer.id}"><i class='bx bxs-edit'></i></a></td>
+                <td><a th:href="@{/delete/} + ${customer.id}"
+                onclick="return confirm('Are you sure you want to delete it?')"><i class='bx bxs-trash'></i></a></td>
             </tr>
         </tbody>
     </table>
-
 </body>
 
 </html>

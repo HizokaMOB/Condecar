@@ -21,21 +21,17 @@
 <body>
     <header>
         <nav>
-            <div class="left-content">
+            <div class="left-content" >
                 <div class="icono">
                     <i class='bx bxs-car'></i>
                 </div>
                 <h1>Conde
                     <br>Car
                 </h1>
-                <a th:href="@{/Control}">
-                    Back
-                </a>
             </div>
             <div class="right-content">
                 <i class='bx bxs-user-circle'></i>
             </div>
-
         </nav>
     </header>
     <div class="container">
@@ -48,40 +44,41 @@
                 <p class="dot"></p>
             </div>
         </div>
-
-        <div>
-            <form th:action="@{/registercustomer}" th:object="${user}" method="post">
-                <h3>customer registration form</h3>
-                <div class="form-field">
-                    <input type="text" id="name" th:field="*{name}" placeholder="name" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-
-                <div class="form-field">
-                    <input type="text" id="adress" th:field="*{adress}" placeholder="adress" required>
-                    <i class='bx bxs-edit-location'></i>
-                </div>
-
-                <div class="form-field">
-                    <input type="email" id="email" th:field="*{email}" placeholder="email" required>
-                    <i class='bx bxs-envelope' ></i>
-                </div>
-
-                <div class="form-field">
-                    <input type="text" id="phone" th:field="*{phone}" placeholder="phone number" required>
-                    <i class='bx bxs-phone' ></i>
-                </div>
-
-                <div class="buttons-container">
-                    <button>Finalize and save in the log</button>
-                    <a th:href="@{/Control}">
-                        Cancel
-                    </a>
-                </div>
-            </form>
-        </div>
     </div>
 
-</body>
+    <div>
+        <form th:action="@{/Edit}" th:object="${user}" method="post">
+            <h3>Edit customer</h3>
+            
+            <input type="hidden" th:field="*{id}">
 
+            <div class="form-field">
+                <input type="text" id="name" th:field="*{name}" placeholder="name" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="adress" th:field="*{adress}" placeholder="adress" required>
+                <i class='bx bxs-edit-location'></i>
+            </div>
+
+            <div class="form-field">
+                <input type="email" id="email" th:field="*{email}" placeholder="email" required>
+                <i class='bx bxs-envelope' ></i>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="phone" th:field="*{phone}" placeholder="phone number" required>
+                <i class='bx bxs-phone' ></i>
+            </div>
+
+            <div class="buttons-container">
+                <button>Save changues</button>
+                <a th:href="@{/Customerlist}">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
 </html>

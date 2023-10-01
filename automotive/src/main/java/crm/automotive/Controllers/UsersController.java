@@ -20,15 +20,6 @@ public class UsersController {
     @Autowired
     private IUsersDao usersDao;
 
-    @GetMapping("/Customerlist")
-    public String list(Model model)
-    {
-        model.addAttribute("title", "Customers list");
-        model.addAttribute("users", usersDao.findAll());
-
-        return "Customerlist";
-    }
-
     @GetMapping("/registercustomer")
     public String crear(Model model) {
         Users user = new Users();
