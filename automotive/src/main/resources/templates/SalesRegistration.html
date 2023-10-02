@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" th:href="@{/css/table2.css}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,600&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left-content">
+                <div class="icono">
+                    <i class='bx bxs-car'></i>
+                </div>
+                <h1>
+                    Conde
+                    <br>Car
+                </h1>
+                <a th:href="@{/Control}">
+                    Back
+                </a>
+                <div class="newbutton">
+                    <a th:href="@{/registersale}">
+                        Add New Sale
+                    </a>
+                </div>
+            </div>
+                <div class="right-content">
+                    <i class='bx bxs-user-circle'></i>
+                </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="hero2">
+            <img th:src="@{/img/carro4.png}" alt="">
+            <div class="dots">
+                <p class="dot"></p>
+                <p class="dot"></p>
+                <p class="dot"></p>
+                <p class="dot"></p>
+            </div>
+        </div>
+    </div>
+
+    <table class="table-design">
+        <tr>
+            <th>CUSTOMER'S NAME</th>
+            <th>SALES DESCRIPTION</th>
+            <th>TYPE OF SALE</th>
+            <th>DATE OF SALE</th>
+            <th>PRICE</th>
+            <th>ACTIONS</th>
+        </tr>
+        <tbody class="table-data">
+            <tr th:each="sale: ${sales}">
+                <td th:text="${sale.customername}"></td>
+                <td th:text="${sale.description}"></td>
+                <td th:text="${sale.type}"></td>
+                <td th:text="${sale.date}"></td>
+                <td th:text="${sale.price}"></td>
+                <td><a th:href="@{/editsale/} + ${sale.id}"><i class='bx bxs-edit'></i></a></td>
+                <td><a th:href="@{/deletesale/} + ${sale.id}"
+                onclick="return confirm('Are you sure you want to delete it?')"><i class='bx bxs-trash'></i></a></td>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+</body>
+
+</html>
