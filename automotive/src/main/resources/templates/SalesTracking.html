@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Registration</title>
-    <link rel="stylesheet" th:href="@{/css/table2.css}">
+    <title>Sales Tracking</title>
+    <link rel="stylesheet" th:href="@{/css/table3.css}">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,600&family=Pacifico&display=swap"
         rel="stylesheet">
@@ -29,13 +29,8 @@
                     Back
                 </a>
                 <div class="newbutton">
-                    <a th:href="@{/registersale}">
-                        Add New Sale
-                    </a>
-                </div>
-                <div class="newbutton2">
-                    <a th:href="@{/registersale}">
-                        Generate Sales Report
+                    <a th:href="@{/registertracking}">
+                        Add New Activity
                     </a>
                 </div>
             </div>
@@ -46,7 +41,7 @@
     </header>
     <div class="container">
         <div class="hero2">
-            <img th:src="@{/img/carro4.png}" alt="">
+            <img th:src="@{/img/carro5.png}" alt="">
             <div class="dots">
                 <p class="dot"></p>
                 <p class="dot"></p>
@@ -59,21 +54,19 @@
     <table class="table-design">
         <tr>
             <th>CUSTOMER'S NAME</th>
-            <th>SALES DESCRIPTION</th>
-            <th>TYPE OF SALE</th>
-            <th>DATE OF SALE</th>
-            <th>PRICE</th>
+            <th>COMUNICATIONS LOG</th>
+            <th>STATUS OF SALE</th>
+            <th>RELEVANT NOTES</th>
             <th>ACTIONS</th>
         </tr>
         <tbody class="table-data">
-            <tr th:each="sale: ${sales}">
-                <td th:text="${sale.customername}"></td>
-                <td th:text="${sale.description}"></td>
-                <td th:text="${sale.type}"></td>
-                <td th:text="${sale.date}"></td>
-                <td th:text="${sale.price}"></td>
-                <td><a th:href="@{/editsale/} + ${sale.id}"><i class='bx bxs-edit'></i></a></td>
-                <td><a th:href="@{/deletesale/} + ${sale.id}"
+            <tr th:each="tracking: ${trackings}">
+                <td th:text="${tracking.customername}"></td>
+                <td th:text="${tracking.comlog}"></td>
+                <td th:text="${tracking.statussale}"></td>
+                <td th:text="${tracking.relevantnotes}"></td>
+                <td><a th:href="@{/editsaletracking/} + ${tracking.id}"><i class='bx bxs-edit'></i></a></td>
+                <td><a th:href="@{/deletesaletracking/} + ${tracking.id}"
                 onclick="return confirm('Are you sure you want to delete it?')"><i class='bx bxs-trash'></i></a></td>
             </tr>
         </tbody>
