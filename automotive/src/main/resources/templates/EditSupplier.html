@@ -47,27 +47,31 @@
         </div>
 
         <div>
-            <form th:action="@{/registertracking}" th:object="${trackings}" method="post">
-                <h3>sale tracking registration form</h3>
+            <form th:action="@{/registersuppliers}" th:object="${suppliers}" method="post">
+                <h3>Edit suppliers registration</h3>
                 <div class="form-field">
-                    <input type="text" th:field="*{customername}" placeholder="customer name" required>
+                    <input type="text" th:field="*{compaName}" placeholder="Company name" required>
                 </div>
 
                 <div class="form-field">
-                    <input type="text" th:field="*{comlog}" placeholder="communications log" required>
+                    <input type="text" th:field="*{mainContact}" placeholder="Main contact" required>
                 </div>
 
                 <div class="form-field">
-                    <input type="text" th:field="*{statussale}" placeholder="status of sale" required>
+                    <input type="text" th:field="*{contactInfo}" placeholder="Contact information" required>
                 </div>
 
                 <div class="form-field">
-                    <input type="text" th:field="*{relevantnotes}" placeholder="relevant notes" required>
+                    <input type="text" th:field="*{producType}" placeholder="Product type" required>
+                </div>
+
+                <div class="form-field">
+                    <input type="text" th:field="*{purHistory}" placeholder="Purchase history" required>
                 </div>
 
                 <div class="buttons-container">
-                    <button>Save</button>
-                    <a th:href="@{/SalesTracking}">
+                    <button>Save changues</button>
+                    <a th:href="@{/SupplierRegistration}">
                         Cancel
                     </a>
                 </div>

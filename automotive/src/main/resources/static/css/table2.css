@@ -110,7 +110,7 @@ header nav .left-content {
     color: #3bb0d1;
     cursor: pointer;
     text-decoration: none;
-    margin-left: 40rem;
+    margin-left: 35rem;
 }
 
 .left-content .newbutton2 a {
@@ -137,7 +137,7 @@ header nav .left-content {
     font-size: 1.1em;
     background: linear-gradient(180deg, #5a5f66, #132839);
     text-decoration: none;
-    margin-right: 0.7rem;
+    margin-right: -0.5rem;
     cursor: default;
     margin-left: 3.6rem;
 }
@@ -157,7 +157,7 @@ header nav .left-content {
     font-size: 1.1em;
     background: linear-gradient(180deg, #5a5f66, #132839);
     text-decoration: none;
-    margin-right: 0.7rem;
+    margin-right: -0.5rem;
     margin-top: 1rem;
     cursor: default;
     margin-left: 3.6rem;

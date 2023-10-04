@@ -20,17 +20,10 @@ Note: to execute the project we have to go to the activity bar in the part of "S
 
 
 # Contacts 
-<<<<<<< HEAD
-1. Juan Diego Rivera Yarce         juan_rivera82211@elpoli.edu.co
-2. Daniel Enrique Hernandez Conde  daniel_hernandez82202@elpoli.edu.co
-3. Juan Pablo Alvarez              juan_alvarez82172@elpoli.edu.co
-4. Alexander Bedoya Serna          alexander_bedoya82122@elpoli.edu.co
-=======
 |           **Name**                   |             **Email**                 |
 |:-------------------------------------|:--------------------------------------|
 |   **Juan Diego Rivera Yarce**        |   juan_rivera82211@elpoli.edu.co      | 
 |   **Daniel Enrique Hernandez Conde** |   daniel_hernandez82202@elpoli.edu.co |
->>>>>>> e957974ad4396fb27e93b08e1de3149895409d40
 
 # Useful links
 * [Ver Mockups](https://www.canva.com/design/DAFsmLsL0Rg/NyQvzue1l3TU_pFcynqu5w/view?utm_content=DAFsmLsL0Rg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1)

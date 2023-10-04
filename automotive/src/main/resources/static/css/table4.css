@@ -77,10 +77,10 @@ header nav .left-content {
 }
 
 .container .hero2 img {
-    width: 45%;
+    width: 40%;
     height: auto;
-    opacity: .5;
-    margin-top: .5rem;
+    opacity: .6;
+    margin-top: 5rem;
 }
 
 .container .hero2 .dots {
@@ -110,7 +110,7 @@ header nav .left-content {
     color: #3bb0d1;
     cursor: pointer;
     text-decoration: none;
-    margin-left: 40rem;
+    margin-left: 42rem;
 }
 
 .table-design th
@@ -127,10 +127,10 @@ header nav .left-content {
     font-size: 1.1em;
     background: linear-gradient(180deg, #5a5f66, #132839);
     text-decoration: none;
-    margin-right: 2.5rem;
+    margin-right: -0.5rem;
     cursor: default;
     margin-left: 3.6rem;
-    
+    margin-top: 1rem;
 }
 
 .table-data td
@@ -148,7 +148,7 @@ header nav .left-content {
     font-size: 1.1em;
     background: linear-gradient(180deg, #5a5f66, #132839);
     text-decoration: none;
-    margin-right: 2.5rem;
+    margin-right: -0.5rem;
     margin-top: 1rem;
     cursor: default;
     margin-left: 3.6rem;

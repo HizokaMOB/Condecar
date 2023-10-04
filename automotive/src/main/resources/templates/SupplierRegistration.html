@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Registration</title>
-    <link rel="stylesheet" th:href="@{/css/table2.css}">
+    <title>Supplier registration</title>
+    <link rel="stylesheet" th:href="@{/css/table4.css}">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,600&family=Pacifico&display=swap"
         rel="stylesheet">
@@ -29,24 +29,19 @@
                     Back
                 </a>
                 <div class="newbutton">
-                    <a th:href="@{/registersale}">
-                        Add new sale
-                    </a>
-                </div>
-                <div class="newbutton2">
-                    <a th:href="@{/exportPDF}">
-                        Generate sales report
+                    <a th:href="@{/registersuppliers}">
+                        Add new supplier
                     </a>
                 </div>
             </div>
-                <div class="right-content">
-                    <i class='bx bxs-user-circle'></i>
-                </div>
+            <div class="right-content">
+                <i class='bx bxs-user-circle'></i>
+            </div>
         </nav>
     </header>
     <div class="container">
         <div class="hero2">
-            <img th:src="@{/img/carro4.png}" alt="">
+            <img th:src="@{/img/carro6.png}" alt="">
             <div class="dots">
                 <p class="dot"></p>
                 <p class="dot"></p>
@@ -58,23 +53,24 @@
 
     <table class="table-design">
         <tr>
-            <th>CUSTOMER'S NAME</th>
-            <th>SALES DESCRIPTION</th>
-            <th>TYPE OF SALE</th>
-            <th>DATE OF SALE</th>
-            <th>PRICE</th>
+            <th>COMPANY NAME</th>
+            <th>MAIN CONTACT</th>
+            <th>CONTACT INFORMATION</th>
+            <th>PRODUCT TYPE</th>
+            <th>PURCHASE HISTORY</th>
             <th>ACTIONS</th>
         </tr>
         <tbody class="table-data">
-            <tr th:each="sale: ${sales}">
-                <td th:text="${sale.customername}"></td>
-                <td th:text="${sale.description}"></td>
-                <td th:text="${sale.type}"></td>
-                <td th:text="${sale.date}"></td>
-                <td th:text="${sale.price}"></td>
-                <td><a th:href="@{/editsale/} + ${sale.id}"><i class='bx bxs-edit'></i></a></td>
-                <td><a th:href="@{/deletesale/} + ${sale.id}"
-                onclick="return confirm('Are you sure you want to delete it?')"><i class='bx bxs-trash'></i></a></td>
+            <tr th:each="supplier: ${suppliers}">
+                <td th:text="${supplier.compaName}"></td>
+                <td th:text="${supplier.mainContact}"></td>
+                <td th:text="${supplier.contactInfo}"></td>
+                <td th:text="${supplier.producType}"></td>
+                <td th:text="${supplier.purHistory}"></td>
+                <td><a th:href="@{/EditSupplier/} + ${supplier.id}"><i class='bx bxs-edit'></i></a></td>
+                <td><a th:href="@{/deletesupplier/} + ${supplier.id}"
+                        onclick="return confirm('Are you sure you want to delete it?')"><i class='bx bxs-trash'></i></a>
+                </td>
             </tr>
         </tbody>
 

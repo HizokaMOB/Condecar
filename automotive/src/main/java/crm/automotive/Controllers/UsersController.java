@@ -35,7 +35,7 @@ public class UsersController {
         usersDao.save(user);
         status.setComplete();
 
-        return "redirect:/login";
+        return "redirect:/Customerlist";
     }
 
 }

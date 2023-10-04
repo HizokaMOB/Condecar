@@ -1,5 +1,11 @@
 package crm.automotive.Controllers;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +16,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.lowagie.text.DocumentException;
+
 import crm.automotive.Models.Dao.ISalesDao;
 import crm.automotive.Models.Entity.Sales;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 
 @Controller
@@ -94,6 +103,24 @@ public class SalesController {
             salesDao.delete(id);
 
         return "redirect:/SalesRegistration";
+    }
+
+    @GetMapping("/exportPDF")
+    public void ExportSaleRegistration(HttpServletResponse response) throws DocumentException, IOException{
+        response.setContentType("application/pdf");
+
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String actualDate = dateFormatter.format(new Date());
+
+        String header = "Content-Disposition";
+        String value = "attachment; filename = Sales_" +  actualDate + ".pdf";
+
+        response.setHeader(header, value);
+
+        List<Sales> sales = salesDao.findAll();
+
+        SalesExporterPDF exporter = new SalesExporterPDF(sales);
+        exporter.export(response);
     }
 
     

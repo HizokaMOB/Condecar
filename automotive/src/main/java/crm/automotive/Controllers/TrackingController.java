@@ -17,15 +17,15 @@ import jakarta.validation.Valid;
 @Controller
 @SessionAttributes("trackings")
 public class TrackingController {
-    
-    @Autowired 
+
+    @Autowired
     private ITrackingDao trackingDao;
 
     @GetMapping("/SalesTracking")
-    public String list(Model model){
-        
+    public String list(Model model) {
+
         model.addAttribute("title", "Sales Tracking list");
-        model.addAttribute("trackings",trackingDao.findAll());
+        model.addAttribute("trackings", trackingDao.findAll());
 
         return "SalesTracking";
     }
@@ -48,7 +48,7 @@ public class TrackingController {
         return "redirect:/SalesTracking";
     }
 
-     @GetMapping("/editsaletracking")
+    @GetMapping("/editsaletracking")
     public String create(Model model) {
 
         Tracking tracking = new Tracking();
@@ -61,7 +61,7 @@ public class TrackingController {
 
     @PostMapping("/editsaletracking")
     public String save(@Valid Tracking tracking, BindingResult bindingResult, SessionStatus status) {
-        
+
         if (bindingResult.hasErrors()) {
             return "editsaletracking";
         }
@@ -87,9 +87,8 @@ public class TrackingController {
     }
 
     @GetMapping("/deletesaletracking/{id}")
-    public String delete(@PathVariable Long id)
-    {
-        if(id>0)
+    public String delete(@PathVariable Long id) {
+        if (id > 0)
 
             trackingDao.delete(id);
 
