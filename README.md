@@ -24,6 +24,8 @@ Note: to execute the project we have to go to the activity bar in the part of "S
 |:-------------------------------------|:--------------------------------------|
 |   **Juan Diego Rivera Yarce**        |   juan_rivera82211@elpoli.edu.co      | 
 |   **Daniel Enrique Hernandez Conde** |   daniel_hernandez82202@elpoli.edu.co |
+|   **Sergio Andrés Bula Moreno**      |   sergio_bula82211@elpoli.edu.co      |
+|   **Santiago Taborda Ruíz**          |   santiago_taborda82211@elpoli.edu.co |
 
 # Useful links
 * [Ver Mockups](https://www.canva.com/design/DAFsmLsL0Rg/NyQvzue1l3TU_pFcynqu5w/view?utm_content=DAFsmLsL0Rg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1)
